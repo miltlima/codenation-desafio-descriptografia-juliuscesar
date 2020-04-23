@@ -21,7 +21,7 @@ https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=SEU_TOKEN
 ```
 Para encontrar o seu token , acesse a plataforma Codenation, faça o login e a informação estará na tela, conforme no exemplo abaixo:
 
-[img]: https://s3-us-west-1.amazonaws.com/codenation-cli/doc/images/token.png
+[img]:https://s3-us-west-1.amazonaws.com/codenation-cli/doc/images/token.png
 
 O resultado da requisição vai ser um JSON conforme o exemplo:
 ```json
