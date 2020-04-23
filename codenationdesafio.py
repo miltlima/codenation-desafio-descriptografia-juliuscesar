@@ -7,7 +7,7 @@ url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=8e74a0
 answer = requests.get (url) # resposta da URL
 print (answer.status_code)
 resposta = answer.json()
-casas=(resposta['numero_casas'])
+casas = (resposta['numero_casas'])
 cifrado = (resposta['cifrado'])
 arquivo = 'answer.json'
 
@@ -16,9 +16,17 @@ alfainv = dict(zip(range(26), "abcdefghijklmnopqrstuvwxyz"))
 
 decifrado = ''
 for i in cifrado:
-    if i.isalpha(): decifrado += alfainv[( alfa[i] - casas)%26 ]
-    else: decifrado += i
-with open(arquivo, 'w') as file_object:
-    json.dump(resposta, file_object)  
-print(decifrado)
+    if i.isalpha(): 
+        decifrado += alfainv[( alfa[i] - casas)%26]
+    else: 
+        decifrado += i
+with open(arquivo, 'w') as arq:
+    resposta["decifrado"] = decifrado
+    json.dump(resposta, arq) 
+
+#print(resposta.values())
+
+#with open(arquivo, 'r') as arq:
+    #carregar = json.load(arq)
+    #resposta["decifrado"] = decifrado
 
